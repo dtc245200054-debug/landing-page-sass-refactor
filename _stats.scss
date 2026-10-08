@@ -1,0 +1,33 @@
+.stats-section {
+  padding: 60px 0;
+  background-color: $primary-color;
+  color: $white;
+
+  .stats-wrapper {
+    @include flex-center(row, space-around, center);
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include respond-to(tablet) {
+      flex-direction: column;
+    }
+  }
+
+  .stat-item {
+    text-align: center;
+
+    &__number {
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    &__label {
+      font-size: 15px;
+      opacity: 0.85;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}

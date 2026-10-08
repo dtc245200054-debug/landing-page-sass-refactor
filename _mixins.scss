@@ -1,0 +1,33 @@
+// Mixin căn giữa flexbox
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Mixin responsive
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: #{$bp-tablet}) { @content; }
+  } @else if $breakpoint == mobile {
+    @media (max-width: #{$bp-mobile}) { @content; }
+  }
+}
+
+// Mixin button cơ bản
+@mixin button-base($bg: $primary-color, $color: $white) {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: $bg;
+  color: $color;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background-color: darken($bg, 8%);
+    transform: translateY(-2px);
+  }
+}
